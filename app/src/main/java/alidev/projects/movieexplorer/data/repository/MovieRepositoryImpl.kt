@@ -4,6 +4,7 @@ import alidev.projects.movieexplorer.data.remote.MovieApi
 import alidev.projects.movieexplorer.data.remote.dto.toDomain
 import alidev.projects.movieexplorer.domain.common.Resource
 import alidev.projects.movieexplorer.domain.model.Movie
+import alidev.projects.movieexplorer.domain.model.MovieDetail
 import alidev.projects.movieexplorer.domain.repository.MovieRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -20,6 +21,31 @@ class MovieRepositoryImpl @Inject constructor(
 
         try {
             val response = api.getPopularMovies(page)
+            val movies = response.results.map { it.toDomain() }
+            emit(Resource.Success(movies))
+        } catch (_: HttpException) {
+            emit(Resource.Error("An unexpected error occurred."))
+        } catch (_: IOException) {
+            emit(Resource.Error("Couldn't reach server. Check your internet connection."))
+        }
+    }
+
+    override fun getMovieDetail(movieId: Int): Flow<Resource<MovieDetail>> = flow {
+        emit(Resource.Loading())
+        try {
+            val movieDetail = api.getMovieDetail(movieId)
+            emit(Resource.Success(movieDetail.toDomain()))
+        } catch (_: HttpException) {
+            emit(Resource.Error("An unexpected error occurred."))
+        } catch (_: IOException) {
+            emit(Resource.Error("Couldn't reach server. Check your internet connection."))
+        }
+    }
+
+    override fun searchMovies(query: String, page: Int): Flow<Resource<List<Movie>>> = flow {
+        emit(Resource.Loading())
+        try {
+            val response = api.searchMovies(query, page)
             val movies = response.results.map { it.toDomain() }
             emit(Resource.Success(movies))
         } catch (_: HttpException) {

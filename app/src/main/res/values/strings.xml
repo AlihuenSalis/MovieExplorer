@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">MovieExplorer</string>
+
+    <!-- Common Errors -->
+    <string name="error_unexpected">An unexpected error occurred.</string>
+    <string name="error_network">Couldn\'t reach server. Check your internet connection.</string>
+
+    <!-- PopularMoviesScreen -->
+    <string name="popular_movies_title">Películas Populares</string>
+    <string name="loading_movies">Cargando películas…</string>
+    <string name="searching_movies">Buscando películas…</string>
+    <string name="error_title">Error</string>
+    <string name="retry_button">Reintentar</string>
+    <string name="empty_movies">No hay películas disponibles</string>
+    <string name="no_matches_found">No se encontraron resultados</string>
+    <string name="try_another_search">Intenta con otra búsqueda</string>
+    <string name="loading_more_movies">Cargando más películas…</string>
+    <string name="end_of_results">Has visto todas las películas disponibles</string>
+
+    <!-- MovieDetailScreen -->
+    <string name="movie_detail_title">Detalle</string>
+    <string name="vote_suffix">/10</string>
+    <string name="release_date_label">Fecha de estreno</string>
+    <string name="duration_label">Duración</string>
+    <string name="duration_value">%d min</string>
+    <string name="status_label">Estado</string>
+    <string name="original_language_label">Idioma original</string>
+    <string name="synopsis_title">Sinopsis</string>
+    <string name="no_synopsis">No hay sinopsis disponible</string>
+    <string name="financial_data_title">Datos financieros</string>
+    <plurals name="vote_count">
+        <item quantity="one">%d voto</item>
+        <item quantity="other">%d votos</item>
+    </plurals>
 </resources>
