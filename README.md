@@ -27,17 +27,20 @@ Este proyecto está diseñado como **portfolio público** para demostrar compete
 
 ## 📱 Funcionalidades (MVP)
 
-* Listado de películas populares y en tendencia.
-* Detalle de película: poster, sinopsis, calificación, géneros, elenco, trailers. (por implementar)
-* Búsqueda de películas por título. (por implementar)
-* Favoritos (persistencia local con Room). (por implementar)
-* Cache básico para mostrar últimos resultados sin conexión. (por implementar)
+* [x] Listado de películas populares.
+* [ ] Listado de películas en tendencia.
+* [x] Detalle de película: poster, sinopsis, calificación, géneros, elenco, trailers.
+* [x] Búsqueda de películas por título.
+* [ ] Mejoras visuales en UI.
+* [ ] Implementación de animaciones.
+* [ ] Favoritos (persistencia local con Room). (por implementar)
+* [ ] Cache básico para mostrar últimos resultados sin conexión. (por implementar)
 
 ### Futuras iteraciones
 
-* Login + sincronización de favoritos.
-* Extensión KMP para compartir lógica con iOS.
-* Soporte Tablets, TV, Wear OS.
+* [ ] Login + sincronización de favoritos.
+* [ ] Extensión KMP para compartir lógica con iOS.
+* [ ] Soporte Tablets, TV, Wear OS.
 
 ---
 
@@ -58,7 +61,7 @@ Este proyecto está diseñado como **portfolio público** para demostrar compete
 
 ---
 
-## ✅ Checklist de Senior Skills
+## ✅ Checklist de Skills
 
 * [x] Kotlin + Jetpack Compose
 * [x] Clean Architecture (Domain/Data/Presentation)
